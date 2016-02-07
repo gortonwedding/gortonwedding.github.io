@@ -20,7 +20,7 @@
 
         #map {
             width: 100%;
-            height: 500px;
+            height: 600px;
         }
 
         p {
@@ -75,22 +75,25 @@
         <div class="col-xs-6 col-sm-2 col-md-2" style="background-color: #80c2c0; height: 200px;">
             <div class="center-block">
                 <h3 style="color: white; text-align: center;">Punta Cana</h3>
-                <img src="assets/images/dominican-republic.gif" style="width: 100%">
+                <img src="assets/images/dominican-republic.gif" style="max-height: 140px; width: 100%;">
             </div>
         </div>
         <div class="col-xs-6 col-sm-2 col-md-2" style="background-color: #82c6c4; height: 200px;">
             <div class="center-block">
                 <h3 style="color: white; text-align: center;">White Sand</h3>
+                <img src="assets/images/white-sand.gif" style="max-height: 130px; width: 100%; margin-top: 10px;">
             </div>
         </div>
         <div class="col-xs-6 col-sm-2 col-md-2" style="background-color: #85cac8; height: 200px;">
             <div class="center-block">
                 <h3 style="color: white; text-align: center;">Blue Water</h3>
+                <img src="assets/images/blue-water.gif" style="max-height: 130px; width: 100%; margin-top: 10px;">
             </div>
         </div>
         <div class="col-xs-6 col-sm-2 col-md-2" style="background-color: #88cfcd; height: 200px;">
             <div class="center-block">
                 <h3 style="color: white; text-align: center;">Be there.</h3>
+                <h4 style="text-align: center; color: white; margin-top: 50px;"><b>January 7, 2017</b></h4>
             </div>
         </div>
     </div>
@@ -131,17 +134,11 @@
     </div>
 </div>
 
-<!--# background swirly-->
-<div style="position: relative;">
-    <div
-        style="top: -110px; width: 100%; height: 800px; position: absolute; z-index: -10; background-image: url('assets/images/swirly.gif'); background-repeat: no-repeat;"></div>
-</div>
-
-<!--# navigation-->
+<!-- wedding party -->
 <div class="container-fluid">
     <div class="row" style="margin: 20px 0;">
         <div class="col-md-8 col-md-offset-2">
-            <h1 style="text-align: center;">The Wedding Party</h1>
+            <h2 style="text-align: center;">The Wedding Party</h2>
             <h3 style="text-align: center;">Bride's Maids</h3>
         </div>
     </div>
@@ -198,13 +195,27 @@
 </div>
 
 <!--break -->
-<div class="clearfix"></div>
+<div class="clearfix" style="margin-top: 100px;"></div>
+
+<!--# the map-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h2 style="text-align: center;">The Wedding Destination</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div id='map'>
+            <iframe width='100%' height='600px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/actongorton.opkn68aj/attribution,zoompan.html?access_token=pk.eyJ1IjoiYWN0b25nb3J0b24iLCJhIjoiYzN6bjdVSSJ9.MrdOhiy7dFMh-9J4S8Oo0g'></iframe>
+        </div>
+    </div>
+</div>
+
 
 <!-- wedding destination letter -->
 <div class="container">
     <div class="row" style="margin: 20px 0;">
         <div class="col-md-8 col-md-offset-2">
-            <h2>Wedding Destination</h2>
             <h3>Dear Family and Friends,</h3>
             <p>We are very excited to be celebrating our wedding in the Dominican Republic. It has always been our dream to have a beach wedding, in a warm tropical place, surrounded by our family and friends. We have chosen the Dominican Republic based on recommendations by family and of a lot of thorough research. It is very important for us that everyone feels invited and can do so within their means. We realize how much is being asked to travel so far, and we hope the plan we’ve put together helps.<br><br>
                 Punta Cana was chosen because it struck the right balance between natural beauty, ease of travel, and affordability. The location we’ve decided on promises endless activities and near enough features to allow plenty of exploration for anyone that wants to see the island beyond the resort.<br><br>
@@ -251,6 +262,12 @@
     </div>
 </div>
 
+<!--# background swirly-->
+<div style="position: relative;">
+    <div
+        style="bottom: 1000px; width: 100%; height: 800px; position: absolute; z-index: -10; opacity: 0.2; filter: alpha(opacity=20); /* For IE8 and earlier */ background-image: url('assets/images/swirly.gif'); background-repeat: no-repeat;"></div>
+</div>
+
 <!--break -->
 <div class="clearfix"></div>
 
@@ -277,17 +294,6 @@
         </div>
     </div>
 </div>
-
-<!--# the map-->
-<div class="container-fluid">
-    <div class="row">
-        <div id='map'>
-            <iframe width='100%' height='500px' frameBorder='0'
-                    src='https://a.tiles.mapbox.com/v4/actongorton.opkn68aj/attribution,zoompan.html?access_token=pk.eyJ1IjoiYWN0b25nb3J0b24iLCJhIjoiYzN6bjdVSSJ9.MrdOhiy7dFMh-9J4S8Oo0g'></iframe>
-        </div>
-    </div>
-</div>
-
 
 <!--# end / start scripts-->
 <script type="text/javascript">
