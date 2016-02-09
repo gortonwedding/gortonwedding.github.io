@@ -23,6 +23,7 @@
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     <script src="assets/flipclock/jquery.countdown.min.js"></script>
     <script type="text/javascript" src="assets/flipclock/flipclock.js"></script>
+    <script type="text/javascript" src="assets/canvid/canvid.js"></script>
     <style>
         html, body {
             padding: 0;
@@ -31,7 +32,7 @@
 
         #map {
             width: 100%;
-            height: 700px;
+            height: 300px;
         }
 
         p {
@@ -63,16 +64,48 @@
         .clearfix {
             height: 40px;
         }
+        canvas.canvid {
+            width: 100%;
+        }
+        .video {
+            z-index: -10;
+        }
+        .title {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            z-index: 20;
+        }
+        .title h1 {
+            font-size: 7vw;
+            opacity: .7;
+        }
+        .title h2 {
+            font-size: 5vw;
+            opacity: .7;
+        }
+        .overlay {
+            position: absolute;
+            background-color: white;
+            z-index: 10;
+            width: 100%;
+            height: calc(100% - 5px);
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
 <div class="container-fluid">
-    <div class="row">
-        <div>
-            <!--<img src="assets/images/punta_cana_banner.jpeg" style="width: 100%;">-->
-            <video loop muted autoplay style="width: 100%; margin-bottom: -205px; position: relative; top: -200px;">
-                <source src="assets/images/background.mp4" type="video/mp4" style="width: 100%;">
-            </video>
+    <div class="row" style="margin-bottom: -5px;">
+        <div style="position: relative;">
+            <div class="title">
+                <div style="height: 30%; width: 100%; clear: both;"></div>
+                <h1 style="color: #0489B1;">January 7, 2017</h1>
+                <h2 style="color: #0489B1;">Punta Cana, Dominican Republic</h2>
+            </div>
+            <div class="overlay"></div>
+            <div class="video"></div>
         </div>
     </div>
 
@@ -86,28 +119,22 @@
         </div>
         <div class="col-xs-6 col-sm-2 col-md-2" style="background-color: #80c2c0; height: 200px;">
             <div class="center-block">
-                <h3 style="color: white; text-align: center;">Punta Cana</h3>
-                <img src="assets/images/dominican-republic.gif" style="max-height: 140px; width: 100%;">
+                <h3 style="color: white; text-align: center; margin-top: 90px;">Warm Sun.</h3>
             </div>
         </div>
         <div class="col-xs-6 col-sm-2 col-md-2" style="background-color: #82c6c4; height: 200px;">
             <div class="center-block">
-                <h3 style="color: white; text-align: center;">White Sand</h3>
-                <img src="assets/images/white-sand.gif" style="max-height: 130px; width: 100%; margin-top: 10px;">
+                <h3 style="color: white; text-align: center; margin-top: 90px;">White Sand.</h3>
             </div>
         </div>
         <div class="col-xs-6 col-sm-2 col-md-2" style="background-color: #85cac8; height: 200px;">
             <div class="center-block">
-                <h3 style="color: white; text-align: center;">Blue Water</h3>
-                <img src="assets/images/blue-water.gif" style="max-height: 130px; width: 100%; margin-top: 10px;">
+                <h3 style="color: white; text-align: center; margin-top: 90px;">Blue Water.</h3>
             </div>
         </div>
         <div class="col-xs-6 col-sm-2 col-md-2" style="background-color: #88cfcd; height: 200px;">
             <div class="center-block">
-                <h3 style="color: white; text-align: center;">Be there.</h3>
-
-                <p style="font-size: 2em; text-align: center; color: #333; margin-top: 25px; text-shadow: .5px .5px #777;">
-                    <b>January 7, 2017</b></p>
+                <h3 style="color: white; text-align: center; margin-top: 90px;">Join Us.</h3>
             </div>
         </div>
     </div>
@@ -174,19 +201,19 @@
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 col-md-4 col-lg-4">
             <div class="center-block" style="height: 250px;">
-                <img class="center-block" src="./assets/images/joleen.gif" style="height: 100%;">
+                <img class="center-block" src="./assets/images/joleen.gif" style="height: 100%; margin-top: 30px;">
                 <h4 style="text-align: center;">Joleen Simpson</h4>
             </div>
         </div>
         <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 col-md-4 col-lg-4">
             <div class="center-block" style="height: 250px;">
-                <img class="center-block" src="./assets/images/meg.gif" style="height: 100%;">
+                <img class="center-block" src="./assets/images/meg.gif" style="height: 100%; margin-top: 30px;">
                 <h4 style="text-align: center;">Meg Hamann</h4>
             </div>
         </div>
         <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 col-md-4 col-lg-4">
             <div class="center-block" style="height: 250px;">
-                <img class="center-block" src="./assets/images/ashley.gif" style="height: 100%;">
+                <img class="center-block" src="./assets/images/ashley.gif" style="height: 100%; margin-top: 30px;">
                 <h4 style="text-align: center;">Ashley Shroeder</h4>
             </div>
         </div>
@@ -204,19 +231,19 @@
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 col-md-4 col-lg-4">
             <div class="center-block" style="height: 250px;">
-                <img class="center-block" src="./assets/images/boyang.gif" style="height: 100%;">
+                <img class="center-block" src="./assets/images/boyang.gif" style="height: 100%; margin-top: 30px;">
                 <h4 style="text-align: center;">Boyang Matsapola</h4>
             </div>
         </div>
         <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 col-md-4 col-lg-4">
             <div class="center-block" style="height: 250px;">
-                <img class="center-block" src="./assets/images/arvind.gif" style="height: 100%;">
+                <img class="center-block" src="./assets/images/arvind.gif" style="height: 100%; margin-top: 30px;">
                 <h4 style="text-align: center;">Arvind Badrianiyan</h4>
             </div>
         </div>
         <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 col-md-4 col-lg-4">
             <div class="center-block" style="height: 250px;">
-                <img class="center-block" src="./assets/images/justin.gif" style="height: 100%;">
+                <img class="center-block" src="./assets/images/justin.gif" style="height: 100%; margin-top: 30px;">
                 <h4 style="text-align: center;">Justin Smith</h4>
             </div>
         </div>
@@ -235,7 +262,7 @@
     </div>
     <div class="row">
         <div id='map'>
-            <iframe width='100%' height='700px' frameBorder='0'
+            <iframe width='100%' height='300px' frameBorder='0'
                     src='https://a.tiles.mapbox.com/v4/actongorton.opkn68aj/attribution,zoompan.html?access_token=pk.eyJ1IjoiYWN0b25nb3J0b24iLCJhIjoiYzN6bjdVSSJ9.MrdOhiy7dFMh-9J4S8Oo0g'></iframe>
         </div>
     </div>
@@ -335,9 +362,9 @@
                 you’ll have the guaranteed price listed above.</p>
             <br><br><br>
 
-            <h2 style="text-align: center;">Wedding Registry</h2>
+            <!--<h2 style="text-align: center;">Wedding Registry</h2>-->
 
-            <p style="text-align: center;">To come...</p>
+            <!--<p style="text-align: center;">To come...</p>-->
         </div>
     </div>
 </div>
@@ -359,7 +386,7 @@
 
 
 <!--# contact information-->
-<div class="container-fluid">
+<!-- <div class="container-fluid">
     <div class="row">
         <div class="col-sm-4 col-md-4" style="background-color: #80c2c0; height: 150px;">
             <div style="padding: 10px;">
@@ -385,9 +412,27 @@
         </div>
     </div>
 </div>
+-->
 
 <!--# end / start scripts-->
 <script type="text/javascript">
+
+    // https://github.com/gka/canvid
+    var canvidControl = canvid({
+        selector : '.video',
+        videos: {
+            clip1: { src: 'assets/images/background.jpg', frames: 59, fps: 15, cols: 6, loops: 1, onEnd: function(){
+                console.log('clip1 ended.');
+                canvidControl.play('clip1');
+            }}
+        },
+        loaded: function() {
+            canvidControl.play('clip1');
+            // reverse playback
+            // canvidControl.play('clip1', true);
+        }
+    });
+
     // https://github.com/objectivehtml/FlipClock
     $(function () {
         FlipClock.Lang.Custom = {days: 'Days', hours: 'Hours', minutes: 'Minutes'};
