@@ -17,10 +17,10 @@
           type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <link type="text/css" rel="stylesheet" href="assets/flipclock/flipclock.css"/>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
             integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
             crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     <script src="assets/flipclock/jquery.countdown.min.js"></script>
     <script type="text/javascript" src="assets/flipclock/flipclock.js"></script>
     <script type="text/javascript" src="assets/js/canvid.js"></script>
@@ -68,9 +68,11 @@
         }
         canvas.canvid {
             width: 100%;
+            margin: 0 auto;
         }
         .video {
             z-index: -10;
+            /*width: 100%;*/
         }
         .title {
             position: absolute;
@@ -97,7 +99,7 @@
         }
         .hideme
         {
-            opacity:0;
+            opacity: 0;
         }
     </style>
 </head>
@@ -106,7 +108,7 @@
     <div class="row" style="margin-bottom: -5px;">
         <div style="position: relative;">
             <div class="title">
-                <div style="height: 30%; width: 100%; clear: both;"></div>
+                <div style="width: 100%; height: 30%;"></div>
                 <h1 style="color: #0489B1;">January 7, 2017</h1>
                 <h2 style="color: #0489B1;">Punta Cana, Dominican Republic</h2>
             </div>
@@ -119,7 +121,6 @@
         <div class="col-xs-12 col-sm-4 col-md-4 col-log-4" style="background-color: #585858; height: 200px;">
             <div class="center-block">
                 <h3 style="color: white; text-align: center;">Countdown to Wedding</h3>
-
                 <div id="countdown" class="center-block" style="width: 270px; margin: 40px auto 0 auto;"></div>
             </div>
         </div>
@@ -151,31 +152,32 @@
     <div class="row" style="margin: 20px 0;">
         <div class="col-md-8 col-md-offset-2">
             <!-- About Us -->
-            <h1 class='hideme' style="text-align: center;">Alicia & Acton</h1>
+            <h1 style="text-align: center;">Alicia & Acton</h1>
 
-            <p class='hideme'>Acton and Alicia are currently students at the University of Illinois. Alicia is a licensed nurse, and is
-                working on her BA. Acton is a PhD candidate, hoping to finish his work in the next coming year.</p>
+            <p>Acton and Alicia are currently students at the University of Illinois.</p>
+            <p>Alicia is a licensed nurse and is working on her BA in Psychology.</p>
+            <p>Acton is a data journalist and a PhD candidate in Informatics, hoping to finish his research within the year.</p>
 
             <!-- How we Met -->
-            <h2 style="text-align: center;" class='hideme'>How we Met</h2>
+            <h2 style="text-align: center;">How we Met</h2>
 
-            <p class='hideme' style="text-align: center;">Acton likes to emphasize we met due to a classified ad posted to
+            <p>Acton likes to emphasize we met due to a classified ad posted to
                 Craigslist.com in 2010.</p>
 
-            <p class='hideme' style="text-align: center;">Technically, that's true... but it wasn't nearly as scandalous as that
+            <p>Technically, that's true... but it wasn't nearly as scandalous as that
                 sounds.</p>
 
-            <p class='hideme' style="text-align: center;">It was the ROOMMATE section.</p>
+            <p class='hideme'>It was the ROOMMATE section.</p>
 
-            <p class='hideme' style="text-align: center;">We just lucked out.</p>
+            <p class='hideme'>We just lucked out.</p>
 
-            <p class='hideme' style="text-align: center;">Acton was searching for a new roommate at the time Alicia was moving back to
+            <p class='hideme'>Acton was searching for a new roommate at the time Alicia was moving back to
                 Champaign.</p>
 
-            <p class='hideme' style="text-align: center;">We knew each other for nearly a year, and our friendship grew as we found
+            <p class='hideme'>We knew each other for nearly a year, and our friendship grew as we found
                 ourselves enjoying each other's company more and more.</p>
 
-            <p class='hideme' style="text-align: center;">We decided to give things a chance, and we fell in love.</p>
+            <p class='hideme'>We decided to give things a chance, and we fell in love.</p>
 
             <!-- The Proposal -->
             <h2 class='hideme' style="text-align: center;">The Proposal</h2>
@@ -343,17 +345,10 @@
             <h3 class='hideme' style="color: #555;">Date for the room block: Jan.5th – 8th, 2017</h3>
 
             <p class='hideme'>Dreams Palm Beach – Deluxe Tropical View</b></p>
-                <p>Single - $840<br>
-                Extra Night - $280</p>
-
-            <p class='hideme'>Double - $675 per person<br>
-                Extra Night - $225 per person</p>
-
-            <p class='hideme'>Triple - $663 per person<br>
-                Extra Night - $221 per person</p>
-
-            <p class='hideme'>Child – 3-12 years - $233<br>
-                Extra Night - $77 per child</p>
+            <p class="hideme">Single - $840<br>Extra Night - $280</p>
+            <p class='hideme'>Double - $675 per person<br>Extra Night - $225 per person</p>
+            <p class='hideme'>Triple - $663 per person<br>Extra Night - $221 per person</p>
+            <p class='hideme'>Child – 3-12 years - $233<br>Extra Night - $77 per child</p>
 
             <p class='hideme'><b style="color: #555;">Day pass information:</b><br>
                 Half Pass (Excludes Dinner) $55/person<br>
@@ -422,77 +417,71 @@
 
 <!--# end / start scripts-->
 <script type="text/javascript">
-        $( document ).ready(function() {
+    $(document).ready(function () {
 
-            // https://github.com/gka/canvid
-            var canvidControl = canvid({
-                selector: '.video',
-                videos: {
-                    clip1: {
-                        src: 'assets/images/background.jpg',
-                        frames: 59,
-                        fps: 15,
-                        cols: 6,
-                        loops: 1,
-                        onEnd: function () {
-                            console.log('clip1 ended.');
-                            canvidControl.play('clip1');
-                        }
+        // https://github.com/gka/canvid
+        var canvidControl = canvid({
+            selector: '.video',
+            videos: {
+                clip1: {
+                    src: 'assets/images/background.jpg',
+                    frames: 56,
+                    fps: 15,
+                    cols: 6,
+                    loops: 1,
+                    onEnd: function () {
+                        canvidControl.play('clip1');
                     }
-                },
-                loaded: function () {
-                    canvidControl.play('clip1');
-                    // reverse playback
-                    // canvidControl.play('clip1', true);
                 }
+            },
+            loaded: function () {
+                canvidControl.play('clip1');
+            }
+        });
+
+        // https://github.com/objectivehtml/FlipClock
+        $(function () {
+            FlipClock.Lang.Custom = {days: 'Days', hours: 'Hours', minutes: 'Minutes'};
+            var opts = {
+                clockFace: 'DailyCounter',
+                countdown: true,
+                language: 'Custom'
+            };
+            opts.classes = {
+                active: 'flip-clock-active',
+                before: 'flip-clock-before',
+                divider: 'flip-clock-divider',
+                dot: 'flip-clock-dot',
+                label: 'flip-clock-label',
+                flip: 'flip',
+                play: 'play',
+                wrapper: 'flip-clock-small-wrapper'
+            };
+            var countdown = 1483768800 - ((new Date().getTime()) / 1000); // from: 01/07/2017 12:00 am -0600
+            countdown = Math.max(1, countdown);
+            $('#countdown').FlipClock(countdown, opts);
+        });
+
+        // show element if it is within browser window
+        $(window).scroll(function () {
+            $('.hideme').each(function (i) {
+
+                var top_of_object = $(this).offset().top;
+                var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+                /* If the object is completely visible in the window, fade it in` */
+                if (bottom_of_window > top_of_object) {
+
+                    $(this).animate({'opacity': '1'}, 'fast');
+
+                }
+
             });
+        });
 
-            // https://github.com/objectivehtml/FlipClock
-            $(function () {
-                FlipClock.Lang.Custom = {days: 'Days', hours: 'Hours', minutes: 'Minutes'};
-                var opts = {
-                    clockFace: 'DailyCounter',
-                    countdown: true,
-                    language: 'Custom'
-                };
-                opts.classes = {
-                    active: 'flip-clock-active',
-                    before: 'flip-clock-before',
-                    divider: 'flip-clock-divider',
-                    dot: 'flip-clock-dot',
-                    label: 'flip-clock-label',
-                    flip: 'flip',
-                    play: 'play',
-                    wrapper: 'flip-clock-small-wrapper'
-                };
-                var countdown = 1483768800 - ((new Date().getTime()) / 1000); // from: 01/07/2017 12:00 am -0600
-                countdown = Math.max(1, countdown);
-                $('#countdown').FlipClock(countdown, opts);
-            });
-
-            // fade with scroll
-            /* Every time the window is scrolled ... */
-            $(window).scroll(function () {
-
-                /* Check the location of each desired element */
-                $('.hideme').each(function (i) {
-
-                    var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-                    var bottom_of_window = $(window).scrollTop() + $(window).height();
-
-                    /* If the object is completely visible in the window, fade it it */
-                    if (bottom_of_window > bottom_of_object) {
-
-                        $(this).animate({'opacity': '1'}, 500);
-
-                    }
-
-                });
-
-            });
-
-            $('body').fadeIn(1500)
-        })
+        // fade in after everything is loaded
+        $('body').fadeIn();
+    })
 </script>
 </body>
 </html>
